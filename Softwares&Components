@@ -1,0 +1,6 @@
+Image is obtained from a small RGB camera
+Proccesing 2 IDE is used for processing
+OpenCV libraries are used for gesture recognition
+Arduino UNO is used to control the LED array
+Bluetooth Module is used for wireless serial interface between the Arduino and computer.
+An LED array is used to display the text.
