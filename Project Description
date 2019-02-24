@@ -1,0 +1,24 @@
+First the processing IDE receives the input image signal from the RGB camera, then this image is processed by the openCV library of the processing IDE.
+
+The input image is formed of several individual unit known as pixels, these have a specific RGB (RED GREEN BLUE) value which specifies the amount of red, green, blue color content in it. 
+Each color has a specific RGB value and this fact is used to determine the pixels containing the hand.
+
+Each pixels RGB value in the captured image is calculated and compared with that of the hand signal, the error i.e, the difference between the RGB value of the two pixels is calculated .
+Pixels within a certain range of error are outlined.
+
+The error will be set as a threshold value (not zero) so that we can accommodate the errors due to improper lighting conditions and since we aren't using the best quality of camera the pixels RGB values may not be very accurate to the true value.
+
+Using inbuilt functions of the IDE these signals are converted to black and white where only the pixels with error within threshold are white and the rest of the background is black.
+This helps in the identification of the shape of the gesture that the hand signal represents .
+
+Once recognized it is sent as input to the Bluetooth module through serial communication from the processing IDE .
+Thesignal is further sent from the bluetooth module to the arduino microprocessor.
+
+The arduino is rigged with a bluetooth module which acts as a channel for serial communication with the system running the processing IDE.
+The bluetooth module recieves the input signal as Alphabets.
+
+The bluetooth module is connected to the arduino microcontrollers serial pins. 
+Based on the letter received as input the arduino redirects the signal to its output pins .
+Theseoutput pins are connected to the Led array.
+
+Based on the letter received by the arduino ,the corresponding Digital output pins go high thus lighting the LED array in the pattern of the desired alphabet.
